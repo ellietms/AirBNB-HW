@@ -19,6 +19,7 @@ client.connect(() => {
             {name:name},  
         ],
     }
+    // find rooms by names or summary
     collection.find(searchObject).toArray((error, results) => {
       if (name !== "" || summary !== "") {
         if(error){
@@ -33,6 +34,10 @@ client.connect(() => {
       }
     });
   });
+  
+
+
+
 });
 
 console.log("working");
