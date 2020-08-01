@@ -33,7 +33,7 @@ client.connect(() => {
   app.get("/films/:price", (request, response) => {
     const { price } = request.params;
     collection.find({}).toArray((error, results) => {
-      const filteredByPrice = results.filter(data => data.price == price);
+      const filteredByPrice = results.filter(data => data.price == Number(price));
       if (filteredByPrice !== "") {
         if (error) {
           response.status(500).send("Something went Wrong :(");
